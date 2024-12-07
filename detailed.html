@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>COCOMO II Детальная оценка</h2>
+    <form method="POST">
+        <label for="size">Введите объем программного продукта в тысячах строк исходного текста:</label>
+        <input type="number" id="size" name="size" placeholder="Количество строк" required>
+        <label for="size">тыс.строк</label>
+        <p>Факторы масштаба</p>
+        <p>1.Прецедентность, наличие опыта аналогичных разработок </p>
+        <input type="radio" name="prec" value=6.2> <a href="#" title="опыт в продукте и платформе отсутствует">Очень низкий</a> <br>
+        <input type="radio" name="prec" value=4.96> <a href="#" title="продукт и платформа немногознакомы">Низкий</a><br>
+        <input type="radio" name="prec" value=3.72> <a href="#" title="некоторый опыт в продукте и платформе присутствует">Средний</a> <br>
+        <input type="radio" name="prec" value=2.48> <a href="#" title="продукт и платформа в основном известны">Высокий</a> <br>
+        <input type="radio" name="prec" value=1.24><a href="#" title="продукт и платформа в большой степени знакомы"> Очень высокий</a> <br>
+        <input type="radio" name="prec" value=0.0><a href="#" title="продукт и платформа полностью знакомы"> Критический</a> <br>
+        <p>2.Гибкость процесса разработки  </p>
+        <input type="radio" name="flex" value=5.07> <a href="#" title="процесс строго детерминирован">Очень низкий</a> <br>
+        <input type="radio" name="flex" value=4.05> <a href="#" title="допускаются некоторые компромиссы">Низкий</a> <br>
+        <input type="radio" name="flex" value=3.04><a href="#" title="значительная жесткость процесса"> Средний</a> <br>
+        <input type="radio" name="flex" value=2.03> <a href="#" title="относительная жесткость процесса">Высокий</a> <br>
+        <input type="radio" name="flex" value=1.01><a href="#" title="незначительная жесткость процесса"> Очень высокий</a> <br>
+        <input type="radio" name="flex" value=0.0> <a href="#" title="определены только общие цели">Критический</a> <br>
+        <p>3.Архитектура и разрешение рисков</p>
+        <input type="radio" name="resl" value=7.07><a href="#" title="риски известны/проанализированы на 20%"> Очень низкий</a> <br>
+        <input type="radio" name="resl" value=5.65><a href="#" title="риски известны/проанализированы на 40%"> Низкий</a> <br>
+        <input type="radio" name="resl" value=4.24><a href="#" title="риски известны/проанализированы на 60%"> Средний</a> <br>
+        <input type="radio" name="resl" value=2.83><a href="#" title="риски известны/проанализированы на 75%"> Высокий</a> <br>
+        <input type="radio" name="resl" value=1.41><a href="#" title="риски известны/проанализированы на 90%"> Очень высокий</a> <br>
+        <input type="radio" name="resl" value=0.0> <a href="#" title="риски разрешены на 100%">Критический</a> <br>
+        <p>4.Сработанность команды</p>
+        <input type="radio" name="team" value=5.48><a href="#" title="формальные взаимодействия"> Очень низкий</a> <br>
+        <input type="radio" name="team" value=4.38><a href="#" title="тяжелое взаимодействие до некоторой степени"> Низкий</a> <br>
+        <input type="radio" name="team" value=3.29> <a href="#" title="чаще всего коллективная работа">Средний</a> <br>
+        <input type="radio" name="team" value=2.19><a href="#" title="в основном коллективная работа"> Высокий</a> <br>
+        <input type="radio" name="team" value=1.1> <a href="#" title="высокая степень взаимодействия">Очень высокий</a> <br>
+        <input type="radio" name="team" value=0.0><a href="#" title="полное доверие, взаимозаменяемость и взаимопомощь"> Критический</a> <br>
+        <p>5.Зрелость процессов</p>
+        <input type="radio" name="pmat" value=7.8><a href="#" title="СММ Уровень 1 (ниже среднего)"> Очень низкий</a> <br>
+        <input type="radio" name="pmat" value=6.24> <a href="#" title="СММ Уровень 1 (выше среднего)">Низкий</a> <br>
+        <input type="radio" name="pmat" value=4.68> <a href="#" title="СММ Уровень 2">Средний</a> <br>
+        <input type="radio" name="pmat" value=3.12> <a href="#" title="СММ Уровень 3">Высокий</a> <br>
+        <input type="radio" name="pmat" value=1.56><a href="#" title="СММ Уровень 4"> Очень высокий</a> <br>
+        <input type="radio" name="pmat" value=0.0><a href="#" title="CMM Уровень 5"> Критический</a> <br>
+        <p>Множители трудоемкости</p>
+        <p>1.Возможности аналитика? </p>
+        <input type="radio" name="acap" value=1.42> Очень низкий<br>
+        <input type="radio" name="acap" value=1.29> Низкий<br>
+        <input type="radio" name="acap" value=1.0> Средний<br>
+        <input type="radio" name="acap" value=0.85> Высокий<br>
+        <input type="radio" name="acap" value=0.71> Очень высокий<br>
+        <p>2.Опыт разработки приложений? </p>
+        <input type="radio" name="aexp" value=1.22> Очень низкий<br>
+        <input type="radio" name="aexp" value=1.1> Низкий<br>
+        <input type="radio" name="aexp" value=1.0> Средний<br>
+        <input type="radio" name="aexp" value=0.88> Высокий<br>
+        <input type="radio" name="aexp" value=0.81> Очень высокий<br>
+        <p>3.Возможности программиста? </p>
+        <input type="radio" name="pcap" value=1.34> Очень низкий<br>
+        <input type="radio" name="pcap" value=1.15> Низкий<br>
+        <input type="radio" name="pcap" value=1.0> Средний<br>
+        <input type="radio" name="pcap" value=0.88> Высокий<br>
+        <input type="radio" name="pcap" value=0.76> Очень высокий<br>
+          <p>4.Продолжительность работы персонала? </p>
+        <input type="radio" name="pcon" value=1.29> Очень низкий<br>
+        <input type="radio" name="pcon" value=1.12> Низкий<br>
+        <input type="radio" name="pcon" value=1.0> Средний<br>
+        <input type="radio" name="pcon" value=0.9> Высокий<br>
+        <input type="radio" name="pcon" value=0.81> Очень высокий<br>
+          <p>5. Опыт работы с платформой? </p>
+        <input type="radio" name="pexp" value=1.19> Очень низкий<br>
+        <input type="radio" name="pexp" value=1.09> Низкий<br>
+        <input type="radio" name="pexp" value=1.00> Средний<br>
+        <input type="radio" name="pexp" value=0.91> Высокий<br>
+        <input type="radio" name="pexp" value=0.85> Очень высокий<br>
+          <p>6. Опыт использования языка программирования и инструментальных средств.? </p>
+        <input type="radio" name="ltex" value=1.20> Очень низкий<br>
+        <input type="radio" name="ltex" value=1.09> Низкий<br>
+        <input type="radio" name="ltex" value=1.00> Средний<br>
+        <input type="radio" name="ltex" value=0.91> Высокий<br>
+        <input type="radio" name="ltex" value=0.84> Очень высокий<br>
+          <p>7. Требуемая надежность программы? </p>
+        <input type="radio" name="rely" value=0.84> Очень низкий<br>
+        <input type="radio" name="rely" value=0.92> Низкий<br>
+        <input type="radio" name="rely" value=1.00> Средний<br>
+        <input type="radio" name="rely" value=1.10> Высокий<br>
+        <input type="radio" name="rely" value=1.26> Очень высокий<br>
+         <p>8. Размер базы данных? </p>
+        <input type="radio" name="data" value=0.23> Низкий<br>
+        <input type="radio" name="data" value=1.00> Средний<br>
+        <input type="radio" name="data" value=1.14> Высокий<br>
+        <input type="radio" name="data" value=1.28> Очень высокий<br>
+         <p>9. Сложность программы? </p>
+        <input type="radio" name="cplx" value=0.73> Очень низкий<br>
+        <input type="radio" name="cplx" value=0.87> Низкий<br>
+        <input type="radio" name="cplx" value=1.00> Средний<br>
+        <input type="radio" name="cplx" value=1.17> Высокий<br>
+        <input type="radio" name="cplx" value=1.34> Очень высокий<br>
+        <input type="radio" name="cplx" value=1.74> Критический<br>
+         <p>10. Требуемая возможность многократного использования? </p>
+        <input type="radio" name="ruse" value=0.95> Низкий<br>
+        <input type="radio" name="ruse" value=1.00> Средний<br>
+        <input type="radio" name="ruse" value=1.07> Высокий<br>
+        <input type="radio" name="ruse" value=1.15> Очень высокий<br>
+        <input type="radio" name="ruse" value=1.24> Критический<br>
+         <p>11. Соответствие документации потребностям жизненного цикла? </p>
+        <input type="radio" name="docu" value=0.81> Очень низкий<br>
+        <input type="radio" name="docu" value=0.91> Низкий<br>
+        <input type="radio" name="docu" value=1.0> Средний<br>
+        <input type="radio" name="docu" value=1.11> Высокий<br>
+        <input type="radio" name="docu" value=1.23> Очень высокий<br>
+         <p>12. Ограничения времени выполнения? </p>
+        <input type="radio" name="time" value=1.0> Средний<br>
+        <input type="radio" name="time" value=1.11> Высокий<br>
+        <input type="radio" name="time" value=1.29> Очень высокий<br>
+        <input type="radio" name="time" value=1.63> Критический<br>
+         <p>13. Ограничения памяти? </p>
+        <input type="radio" name="stor" value=1.0> Средний<br>
+        <input type="radio" name="stor" value=1.05> Высокий<br>
+        <input type="radio" name="stor" value=1.17> Очень высокий<br>
+        <input type="radio" name="stor" value=1.46> Критический<br>
+         <p>14. Изменяемость платформы? </p>
+        <input type="radio" name="pvol" value=0.87> Низкий<br>
+        <input type="radio" name="pvol" value=1.0> Средний<br>
+        <input type="radio" name="pvol" value=1.15> Высокий<br>
+        <input type="radio" name="pvol" value=1.30> Очень высокий<br>
+         <p>15. Использование инструментальных программных средств? </p>
+        <input type="radio" name="tool" value=1.17> Очень низкий<br>
+        <input type="radio" name="tool" value=1.09> Низкий<br>
+        <input type="radio" name="tool" value=1.00> Средний<br>
+        <input type="radio" name="tool" value=0.90> Высокий<br>
+        <input type="radio" name="tool" value=0.78> Очень высокий<br>
+         <p>16. Многоабонентская (удаленная) разработка? </p>
+        <input type="radio" name="site" value=1.22> Очень низкий<br>
+        <input type="radio" name="site" value=1.09> Низкий<br>
+        <input type="radio" name="site" value=1.00> Средний<br>
+        <input type="radio" name="site" value=0.93> Высокий<br>
+        <input type="radio" name="site" value=0.86> Очень высокий<br>
+        <input type="radio" name="site" value=0.8> Критический<br>
+         <p>17. Требуемое выполнение графика работ? </p>
+        <input type="radio" name="sced" value=1.43> Очень низкий<br>
+        <input type="radio" name="sced" value=1.14> Низкий<br>
+        <input type="radio" name="sced" value=1.0> Средний<br>
+        <input type="radio" name="sced" value=1.0> Высокий<br>
+        <input type="radio" name="sced" value=1.0> Очень высокий<br>
+
+
+        <button type="submit">Рассчитать</button>
+    </form>
+{% endblock %}
