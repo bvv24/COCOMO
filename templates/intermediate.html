@@ -1,0 +1,104 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Промежуточный уровень (Intermediate COCOMO)</h2>
+    <form method="POST">
+        <label for="size">Введите объем программного продукта в тысячах строк исходного текста:</label>
+            <input type="number" id="size" name="size" placeholder="Количество строк" required>
+            <label for="size">тыс.строк</label>
+        <p>0. Какой тип проекта?</p>
+        <input type="radio" name="type" value=0> <a href ="#" title="Проект выполняется небольшой группой специалистов, имеющих опыт в создании подобных изделий и опыт применения технологических средств. Условия работы стабильны, и изделие имеет относительно невысокую сложность.">Распространенный</a> <br>
+        <input type="radio" name="type" value=1> <a href ="#" title="Это проекты средней сложности. Исполнители знакомы лишь с некоторыми характеристиками (или компонентами) создаваемой системы, имеют средний опыт работы с подобными изделиями, изделие имеет элемент новизны. Только часть требований к изделию жестко фиксируется, в остальном разработки имеют степени выбора."> Полунезависимый</a> <br>
+        <input type="radio" name="type" value=2> <a href ="#" title="Xарактеризуется очень жесткими требованиями на программный продукт, интерфейсы, параметры ЭВМ. Как правило, у таких изделий высокая степень новизны и планирование работ осуществляется при недостаточной информации, как о самом изделии, так и об условиях работы. Встроенный проект требует больших затрат на изменения и исправления."> Встроенный</a> <br>
+
+        <p>1. Требуемая надежность ПО?</p>
+        <input type="radio" name="rebiabiliry" value=0.75> Очень низкий<br>
+        <input type="radio" name="rebiabiliry" value=0.88> Низкий<br>
+        <input type="radio" name="rebiabiliry" value=1.0> Средний<br>
+        <input type="radio" name="rebiabiliry" value=1.15> Высокий<br>
+        <input type="radio" name="rebiabiliry" value=1.40> Очень высокий<br>
+        <p>2. Размер БД приложения ?</p>
+        <input type="radio" name="db" value=0.94> Низкий<br>
+        <input type="radio" name="db" value=1.0> Средний<br>
+        <input type="radio" name="db" value=1.08> Высокий<br>
+        <input type="radio" name="db" value=1.16> Очень высокий<br>
+        <p>3. Сложность продукта ?</p>
+        <input type="radio" name="complexity" value=0.7> Очень низкий<br>
+        <input type="radio" name="complexity" value=0.85> Низкий<br>
+        <input type="radio" name="complexity" value=1.0> Средний<br>
+        <input type="radio" name="complexity" value=1.15> Высокий<br>
+        <input type="radio" name="complexity" value=1.3> Очень высокий<br>
+        <input type="radio" name="complexity" value=1.65> Критический<br>
+        <p>4. Ограничения быстродействия при выполнении программы?</p>
+        <input type="radio" name="speed" value=1.0> Средний<br>
+        <input type="radio" name="speed" value=1.11> Высокий<br>
+        <input type="radio" name="speed" value=1.30> Очень высокий<br>
+        <input type="radio" name="speed" value=1.66> Критический<br>
+        <p>5. Ограничения памяти?</p>
+        <input type="radio" name="memory" value=1.0> Средний<br>
+        <input type="radio" name="memory" value=1.06> Высокий<br>
+        <input type="radio" name="memory" value=1.21> Очень высокий<br>
+        <input type="radio" name="memory" value=1.56> Критический<br>
+        <p>6. Неустойчивость окружения виртуальной машины?</p>
+        <input type="radio" name="vm" value=0.87> Низкий<br>
+        <input type="radio" name="vm" value=1.0> Средний<br>
+        <input type="radio" name="vm" value=1.15> Высокий<br>
+        <input type="radio" name="vm" value=1.3> Очень высокий<br>
+        <p>7. Требуемое время восстановления ?</p>
+        <input type="radio" name="time" value=0.87> Низкий<br>
+        <input type="radio" name="time" value=1.0> Средний<br>
+        <input type="radio" name="time" value=1.07> Высокий<br>
+        <input type="radio" name="time" value=1.15> Очень высокий<br>
+        <p>8. Аналитические способности?</p>
+        <input type="radio" name="askills" value=1.46> Очень низкий<br>
+        <input type="radio" name="askills" value=1.19> Низкий<br>
+        <input type="radio" name="askills" value=1.0> Средний<br>
+        <input type="radio" name="askills" value=0.86> Высокий<br>
+        <input type="radio" name="askills" value=0.71> Очень высокий<br>
+        <p>9. Опыт разработки ?</p>
+        <input type="radio" name="experience" value=1.29> Очень низкий<br>
+        <input type="radio" name="experience" value=1.13> Низкий<br>
+        <input type="radio" name="experience" value=1.0> Средний<br>
+        <input type="radio" name="experience" value=0.91> Высокий<br>
+        <input type="radio" name="experience" value=0.82> Очень высокий<br>
+        <p>10. Способности к разработке ПО?</p>
+        <input type="radio" name="poskills" value=1.42> Очень низкий<br>
+        <input type="radio" name="poskills" value=1.17> Низкий<br>
+        <input type="radio" name="poskills" value=1.0> Средний<br>
+        <input type="radio" name="poskills" value=0.86> Высокий<br>
+        <input type="radio" name="poskills" value=0.70> Очень высокий<br>
+        <p>11. Опыт использования виртуальных машин ?</p>
+        <input type="radio" name="vmexperience" value=1.21> Очень низкий<br>
+        <input type="radio" name="vmexperience" value=1.1> Низкий<br>
+        <input type="radio" name="vmexperience" value=1.0> Средний<br>
+        <input type="radio" name="vmexperience" value=0.9> Высокий<br>
+        <p>12. Опыт разработки на языках программирования?</p>
+        <input type="radio" name="clexperience" value=1.14> Очень низкий<br>
+        <input type="radio" name="clexperience" value=1.07> Низкий<br>
+        <input type="radio" name="clexperience" value=1.0> Средний<br>
+        <input type="radio" name="clexperience" value=0.95> Высокий<br>
+        <p>13. Применение методов разработки ПО ?</p>
+        <input type="radio" name="method" value=1.24> Очень низкий<br>
+        <input type="radio" name="method" value=1.1> Низкий<br>
+        <input type="radio" name="method" value=1.0> Средний<br>
+        <input type="radio" name="method" value=0.91> Высокий<br>
+        <input type="radio" name="method" value=0.82> Очень высокий<br>
+        <p>14. Использование инструментария разработки ПО?</p>
+        <input type="radio" name="tool" value=1.24> Очень низкий<br>
+        <input type="radio" name="tool" value=1.1> Низкий<br>
+        <input type="radio" name="tool" value=1.0> Средний<br>
+        <input type="radio" name="tool" value=0.91> Высокий<br>
+        <input type="radio" name="tool" value=0.83> Очень высокий<br>
+        <p>15. Требования соблюдения графика разработки?</p>
+        <input type="radio" name="timetable" value=1.23> Очень низкий<br>
+        <input type="radio" name="timetable" value=1.08> Низкий<br>
+        <input type="radio" name="timetable" value=1.0> Средний<br>
+        <input type="radio" name="timetable" value=1.04> Высокий<br>
+        <input type="radio" name="timetable" value=1.1> Очень высокий<br>
+
+
+
+        <button type="submit">Рассчитать</button>
+    </form>
+{% endblock %}

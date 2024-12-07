@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COCOMO Calculator</title>
+    <style>
+         body {
+            height: 100%;
+            font-family: Arial, sans-serif;
+            margin: 10px;
+            padding: 5px;
+            background-color: #f0f4f8;
+        }
+        header {
+            background-color: #f8f9fa;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #dee2e6;
+             position: relative;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #007bff;
+        }
+        .question-icon {
+            position: absolute;
+            top: 15px; /* Расстояние от верхней границы */
+            left: 15px; /* Расстояние от левой границы */
+            background-color: #007bff;
+            color: white;
+            border-radius: 50%; /* Круглая форма */
+            width: 30px; /* Ширина кружочка */
+            height: 30px; /* Высота кружочка */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer; /* Указатель при наведении */
+            font-size: 16px; /* Размер текста */
+        }
+        .question-icon:hover {
+            background-color: #0056b3; /* Цвет при наведении */
+        }
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            width: 400px; /* Фиксированная ширина для всех кнопок */
+            padding: 15px 0; /* Упрощение отступов */
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            margin: 10px auto; /* Центрирует кнопку */
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .button:hover {
+            background-color: #0056b3; /* Цвет при наведении */
+            transform: translateY(-2px); /* Эффект поднятия при наведении */
+        }
+        button {
+            display: inline-block;
+            width: 120px; /* Фиксированная ширина для всех кнопок */
+            padding: 15px 0; /* Упрощение отступов */
+            background-color: #034403;
+            color: white;
+            border-radius: 5px;
+            margin: 20px auto;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background-color: #A3F06C; /* Цвет при наведении */
+            transform: translateY(-2px); /* Эффект поднятия при наведении */
+        }
+        p {
+            font-size: 16px;
+            margin: 15px;
+            color: #111112;
+        }
+        footer {
+            background-color: #f8f9fa;
+            padding: 15px;
+            text-align: center;
+            border-top: 1px solid #dee2e6;
+        }
+        footer p {
+            margin: 5px 0;
+            color: #666;
+        }
+        footer a {
+            text-decoration: none;
+            color: #007bff;
+            transition: color 0.3s;
+        }
+        footer a:hover {
+            color: #0056b3; /* Цвет при наведении */
+        }
+        .card-container {
+        display: flex;
+        justify-content: center;
+        margin: 20px;
+    }
+
+    .card {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 15px;
+        margin: 10px;
+        text-align: center;
+        width: 200px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+        margin: 0;
+        font-size: 18px;
+    }
+
+    .card p {
+        margin: 10px 0 0;
+        font-size: 16px;
+    }
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1><a href="/" style="text-decoration: none; color: inherit;">COCOMO Calculator</a></h1>
+         <div class="question-icon" title="О моделях COCOMO" onclick="window.open('/model_description', '_blank')">
+            ?
+        </div>
+    </header>
+    <main>
+
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>©<strong>Бекешева Виктория</strong>, 2024.</p>
+        <p><a href="/terms">Пользовательское соглашение</a></p>
+    </footer>
+</body>
+</html>
